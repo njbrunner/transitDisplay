@@ -1,6 +1,6 @@
 *{}
 
-/* Header
+/* Base
 -------------------------------------------------- */
 
 html {
@@ -80,6 +80,7 @@ header {
     border-radius: 50px;
 }
 
+
 /* Calendar
 -------------------------------------------------- */
 .calendar {
@@ -87,7 +88,6 @@ header {
     padding-left: 30px;
     padding-right: 80px;
 }
-
 
 
 
