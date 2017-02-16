@@ -1,0 +1,134 @@
+*{}
+
+/* Header
+-------------------------------------------------- */
+
+html {
+    height: 100%;
+    width: 100%
+}
+
+body {
+    background: black;
+    color: white;
+}
+
+
+/* Header
+-------------------------------------------------- */
+
+header {
+    padding-left: 150px;
+}
+
+
+/* Main Content
+-------------------------------------------------- */
+.row {
+    margin: 0;
+}
+
+
+/* Transportation Buttons
+-------------------------------------------------- */
+
+.uber {
+    background: white;
+    color: black;
+    border: white;
+    padding-left: 25px;
+}
+
+.lyft {
+    background: #FF087F;
+    border: #FF087F;
+    padding-left: 30px;
+}
+
+.metro {
+    background: blue;
+    border: blue;
+    padding-left: 20px;
+}
+
+.circle {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: table;
+    transition: width 1s, border-radius 1.5s;
+    margin-top: 80px;
+    margin-left: 80px;
+}
+
+.circle h6 {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.list, .values {
+    list-style: none;
+    display: table-cell;
+    font-size: 16px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.press {
+    width: 400px;
+    border-radius: 50px;
+}
+
+/* Calendar
+-------------------------------------------------- */
+.calendar {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 80px;
+}
+
+
+
+
+/* Weather
+-------------------------------------------------- */
+.weather {
+    padding-top: 120px;
+    padding-left: 30px;
+}
+
+canvas {
+    background: black;
+    padding-top: 15px;
+}
+
+.wi {
+    color: white;
+    font-size: 25px;
+    padding-top: 30px;
+}
+
+/* Footer
+-------------------------------------------------- */
+
+footer {
+    padding-left: 30px;
+    padding-right: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+h6 {
+    font-size: 25px;
+}
+
+#date {
+    float: left;
+}
+
+#time {
+    float: right;
+}
+

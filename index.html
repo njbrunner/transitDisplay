@@ -1,21 +1,149 @@
-<!DOCTYPE html>
+<!doctype>
 <html>
-    <header>
-        <!-- This is the call to the css style sheet -->
-        <link rel="stylesheet" type="text/css" href="style.css">
+    <head>
+        <title>Title</title>
+        
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </header>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+          
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/weather-icons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.5/css/weather-icons.min.css">
+
+    </head>
     <body>
-        <section class="container" id="main">
-            <p>Hello, this is the main section</p>
-        </section>
-        <section class="container" id="bottom">
-            <p>Hello, this is the bottom section</p>
-        </section>
+
+        <!-- Fixed Header -->
+        <header>
+            <h1>Title</h1>
+        </header>
+        
+        <!-- Begin main content -->
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Uber button -->
+                <div id="uber" class="circle uber" onclick="pressed('#uber', '#uber_list', '#uber_values')">
+                    <h6>Uber</h6>
+                    <ul id="uber_list" class="list">
+                        <li>UberX</li>
+                        <li>UberPool</li>
+                        <li>UberXL</li>
+                    </ul>
+                    <ul id="uber_values" class="values">
+                        <li>2 min</li>
+                        <li>2 min</li>
+                        <li>3 min</li>
+                    </ul>
+                </div>
+                <!-- Lyft button -->
+                <div id="lyft" class="circle lyft" onclick="pressed('#lyft', '#lyft_list', '#lyft_values')">
+                    <h6>Lyft</h6>
+                    <ul id="lyft_list" class="list">
+                        <li>Lyft</li>
+                        <li>Lyft Line</li>
+                        <li>Lyft Plus</li>
+                    </ul>
+                    <ul id="lyft_values" class="values">
+                        <li>4 min</li>
+                        <li>4 min</li>
+                        <li>6 min</li>
+                    </ul>
+                </div>
+                <!-- Metro button -->
+                <div id="metro" class="circle metro" onclick="pressed('#metro', '#metro_list', '#metro_values')">
+                    <h6>Metro</h6>
+                    <ul id="metro_list" class="list">
+                        <li>Shady Grove</li>
+                        <li>Glenmont</li>
+                    </ul>
+                    <ul id="metro_values" class="values">
+                        <li>12 min</li>
+                        <li>16 min</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="calendar">
+                    <h3>Calendar</h3>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-2">7:00 AM</div>
+                        <div class="col-md-1">-</div>
+                        <div class="col-md-2">7:00 PM</div>
+                        <div class="col-md-2">Selene</div>
+                        <div class="col-md-5">Work</div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2">3:00 PM</div>
+                        <div class="col-md-1">-</div>
+                        <div class="col-md-2">9:30 PM</div>
+                        <div class="col-md-2">Amanda</div>
+                        <div class="col-md-5">Work</div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2">7:00 PM</div>
+                        <div class="col-md-1">-</div>
+                        <div class="col-md-2">4:30 AM</div>
+                        <div class="col-md-2">Nick</div>
+                        <div class="col-md-5">Work</div>
+                    </div>
+                </div>
+                <div class="weather">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <canvas id="icon" height="100" width="100"></canvas>
+                        </div>
+                        <div class="col-md-4">
+                            <h1 id="temp">61&deg;</h1>
+                            <h3 id="condition">Clear</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <i class="wi wi-umbrella"> 3%</i>
+                        </div>
+                        <div class="col-md-3">
+                            <i class="wi wi-strong-wind"> 4 mph</i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <i class="wi wi-sunrise"> 5:34 AM</i>
+                        </div>
+                        <div class="col-md-3">
+                            <i class="wi wi-sunset"> 6:52 PM</i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- /main content -->
+        
+        <!-- Fixed Footer -->
+        <footer>
+              <h6 id="date">Feb. 15, 2017</h6>
+              <h6 id="time">3:35 PM</h6>
+        </footer>
+        
+        
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"
+        integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="     
+                crossorigin="anonymous"></script>
+        
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <!-- Weather Icons -->
+        <script src="https://rawgithub.com/darkskyapp/skycons/master/skycons.js"></script>
+        
+        <!-- Javascript File -->
+        <script type="text/javascript" src="javascript/javascript.js"></script>
     </body>
 </html>
